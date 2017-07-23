@@ -63,28 +63,6 @@ Python indexing begins with 0. '''
 	gr.add_edges_from(edges)
 	return(gr)
 	
-def circle_method(distances, radius): 
-''' 
-This function takes in a distance matrix, radius, and solution set size 
-and outputs a solution matrix by using the circle method.'''
-	# Initializing solution list
-	solution = []
-	for counter in xrange(solution_size):
-		# Sampling a single clinic
-		# row = random.sample(list(distances.index), 1)
-		row = distances.loc['zamafara_katsina_hf.479']
-		# Pushing row to solution list
-		solution = solution.append(row[0])
-		# Getting data for this row
-		data = distances[rows[0]]
-		# Dropping all clinics more than x km away
-		outside_circle = data[data > radius]
-		# Updating distance matrix
-		distances = distances.loc[outside_circle.index]
-	# Return statement
-	return(solution)
-	
-
 ## Implement code
 def deploy_graph(data = "health facilties ehealth africa.csv", rad = 20):
 '''
@@ -99,27 +77,9 @@ This function deploys the code above on our data-set. It works as follows:
 	adj_matrix = create_adj_matrix(data = df, radius = rad)
 	graph = create_graph(adj_matrix)
 	nx.write_gpickle(graph, wd + "test_" + str(rad) + ".gpickle")
-
-def deploy_circle(data = "health facilties ehealth africa.csv", rad = 20, sol_size = 150):
-'''This function deploys the circle method code. It works as follows: 
-1) Loads the data
-2) Creates distance matrix
-3) Implements circle method on distance matrix
-4) Return solution '''
-	
-	# Loading data
-	df=pd.read_csv(wd + data)
-	#Creating distance matrix
-	dist = create_distance_matrix(data = data, radius = rad)
-	# Calling circle method
-	solution = circle_method(distances = dist, radius = rad)
-	# Returning solution
-	return(solution)
-
-
-
+	return(dist)
 ## Method calls
-deploy_circle()
+distance = deploy_graph()
 
 
 '''

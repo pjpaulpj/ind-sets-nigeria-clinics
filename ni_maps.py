@@ -1,14 +1,14 @@
 ## Importing packages
-import numpy as np								## Numerical Python
-import pandas as pd								## Pandas
-import networkx as nx							## Networks
+import numpy as np						## Numerical Python
+import pandas as pd						## Pandas
+import networkx as nx						## Networks
 import matplotlib.mlab as mlab					## Graphing
 import matplotlib.pyplot as plt 				## Graphing
-import plotly as py								## Graphing
+import plotly as py						## Graphing
 import plotly.graph_objs as go					## Graphing
-from networkx.algorithms import approximation	## Approximation module is not automatically imported with NetworkX
+from networkx.algorithms import approximation			## Approximation module is not automatically imported with NetworkX
 from pandas import DataFrame					## Importing these to keep them on the namespace
-from pandas import Series						## Importing these to keep them on the namespace	
+from pandas import Series					## Importing these to keep them on the namespace	
 import geopy, folium, geopandas					## Spatial analysis packages												
 from geopy.distance import vincenty				## Importing distance calculator into namespace 
 from geopandas import GeoSeries					## Importing geo.series constructor into namespace

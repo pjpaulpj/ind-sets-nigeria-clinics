@@ -77,9 +77,9 @@ This function deploys the code above on our data-set. It works as follows:
 	adj_matrix = create_adj_matrix(data = df, radius = rad)
 	graph = create_graph(adj_matrix)
 	nx.write_gpickle(graph, wd + "test_" + str(rad) + ".gpickle")
-	return(dist)
+	
 ## Method calls
-distance = deploy_graph()
+deploy_graph()
 
 
 '''

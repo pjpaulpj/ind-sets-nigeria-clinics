@@ -4,6 +4,7 @@
 #--------IDinsight----------------------------------------------------#
 #--------June 8th, 2017-----------------------------------------------#
 #---------------------------------------------------------------------#
+
 '''
 This script calculates distances between clinics in the New Incentives
 project data-set. It also computes a sampling frame. 

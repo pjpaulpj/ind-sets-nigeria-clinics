@@ -25,7 +25,8 @@ The repo. also contains two different versions of code which uses the following 
 4) Move to the nearest neighbour 
 5) Repeat 
 
-# Contributions welcome! Here are tasks still remaining:  
+# Contributions welcome! 
+Here are tasks still remaining:  
 
 # graph-algorithm 
 1) Automate AWS execution using boto3 and cron 

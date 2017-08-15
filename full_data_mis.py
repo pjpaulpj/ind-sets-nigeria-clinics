@@ -89,7 +89,7 @@ This code is run on an Amazon EC2 instance.
 cliques = approximation.clique_removal(graph)[1]
 ## Storing biggest cliques
 biggest = max([len(cliques[x]) for x in range(len(cliques))])
- ## Adding 1 to get clinic number		 
+## Adding 1 to get clinic number		 
 cliques = np.array([list(x) for x in cliques if len(x) == biggest])	
 ## Adding location identifier 'K' 
 cliques = cliques[:][:]+ 1

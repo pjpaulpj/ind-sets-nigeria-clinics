@@ -11,7 +11,7 @@ project data-set. It also computes a sampling frame.
 For any questions related to this file, please contact 
 Akshat Goel at akshat.goel@idinsight.org.'''
 
-## Importing packages
+# Importing packages
 import numpy as np
 import pandas as pd	
 import random
@@ -22,25 +22,25 @@ from geopy.distance import vincenty
 from shapely.geometry import Point	
 
 
-## Setting random seed
+# Setting random seed
 random.seed()			
 
-## Setting working directory 
+# Setting working directory 
 wd = '/Users/Akshat/Desktop/mis/'
 
 def create_distance_matrix(data):
 	'''
 	Creating distance matrix using Vincenty distance formula.'''
 	
-	## Creating co-ordinates as a two-element tuple and adding it to the data-set
+	# Creating co-ordinates as a two-element tuple and adding it to the data-set
 	data['coords'] = data[['properties/latitude', 'properties/longitude']].apply(tuple, axis=1)
-	## Creating distance matrix in kilometers (this does too much work because dist. mat. is symmetric)
+	# Creating distance matrix in kilometers (this does too much work because dist. mat. is symmetric)
 	distances = np.array([vincenty(x,y).km for x in data['coords'] for y in data['coords']])
-	## Reshaping data
+	# Reshaping data
 	square = distances.reshape(len(data),len(data))
-	## Indexing using pandas
+	# Indexing using pandas
 	square = DataFrame(square, index = data.id, columns = data.id)
-	### Return statement
+	# Return statement
 	return(square)
 
 def circle_method(distances, radius, initial_clinic = 'zamafara_katsina_hf.450'): 
@@ -90,15 +90,14 @@ def deploy_circle(data = "health facilties ehealth africa.csv", rad = 17):
 	dist = create_distance_matrix(data = df)
 	# Calling circle method
 	solution = circle_method(distances = dist, radius = rad)
-	# Returning solution
 	# Return statement
 	return(dist, solution)
 	
-## Method calls
+# Method calls
 solution = deploy_circle()
 print(len(solution[1]))
 sol = pd.DataFrame(solution[1])
 
-## Writing output
+# Writing output
 filepath = wd + 'solutions17.xlsx' 
 sol.to_excel(filepath, index = False) 

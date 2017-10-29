@@ -14,10 +14,9 @@ Akshat Goel at akshat.goel@idinsight.org.'''
 # Importing packages
 import numpy as np
 import pandas as pd	
-import random
+import random, geopy
 from pandas import DataFrame
 from pandas import Series
-import geopy
 from geopy.distance import vincenty
 from shapely.geometry import Point	
 

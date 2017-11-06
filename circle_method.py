@@ -20,7 +20,6 @@ from pandas import Series
 from geopy.distance import vincenty
 from shapely.geometry import Point	
 
-
 # Setting random seed
 random.seed()			
 

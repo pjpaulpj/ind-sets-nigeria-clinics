@@ -93,10 +93,8 @@ def deploy_circle(data = "health facilties ehealth africa.csv", rad = 17):
 	return(dist, solution)
 	
 # Method calls
-solution = deploy_circle()
-print(len(solution[1]))
-sol = pd.DataFrame(solution[1])
+sol = pd.DataFrame(deploy_circle()[1])
+print(len(solution))
 
 # Writing output
-filepath = wd + 'solutions17.xlsx' 
-sol.to_excel(filepath, index = False) 
+sol.to_excel(wd + 'solutions17.xlsx' , index = False) 

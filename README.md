@@ -25,7 +25,7 @@ The repo. also contains two different versions of code which uses the following 
 4) Move to the nearest neighbour 
 5) Repeat 
 
-# contributions welcome! 
+# Contributions welcome! 
 Here are tasks still remaining:  
 
 # graph-algorithm 

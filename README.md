@@ -1,7 +1,7 @@
 # ind-sets-clinics
 This repository provides demo. Python code for finding the maximal cliques/independent sets of a graph. The data-set consists of geographical points. The goal is to find the largest set of points so that no two points are less than a given distance from each other. 
 
-# Workflow
+# workflow
 
 # graph-algorithm 
 Here is the approximate workflow:  
@@ -25,7 +25,7 @@ The repo. also contains two different versions of code which uses the following 
 4) Move to the nearest neighbour 
 5) Repeat 
 
-# Contributions welcome! 
+# contributions welcome! 
 Here are tasks still remaining:  
 
 # graph-algorithm 
